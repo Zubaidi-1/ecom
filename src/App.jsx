@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Hero from "./components/Hero";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
+import OTP from "./pages/OTP";
+import Categories from "./pages/Categories";
+import ForgotPass from "./pages/ForgotPassword";
+import ChangePassword from "./pages/ChangePassword";
+import PasswordOTP from "./pages/PasswordOtp";
+import Sell from "./pages/Sell";
+import MyPosts from "./pages/MyPosts";
+import AllProducts from "./pages/AllProducts";
+import BooksByGenre from "./pages/ProductsByGenre";
+import Search from "./components/Search";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/OTP" element={<OTP />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/forgotPassword" element={<ForgotPass />} />
+          <Route path="/changePassword" element={<ChangePassword />} />
+          <Route path="/passwordOtp" element={<PasswordOTP />} />
+          <Route path="/sell" element={<Sell />} />
+          <Route path="/myPosts" element={<MyPosts />} />
+          <Route path="/allPosts" element={<AllProducts />} />
+          <Route path="/allPosts/:genre" element={<BooksByGenre />} />
+          <Route path="/Search" element={<Search />} />
+        </Routes>
+      </HashRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
