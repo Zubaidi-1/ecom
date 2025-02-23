@@ -45,7 +45,7 @@ export default function SignUp() {
 
     try {
       const response = await fetch(
-        "bookbackend-production-14e6.up.railway.app/signup",
+        "https://bookbackend-production-14e6.up.railway.app/signup",
         {
           method: "POST",
           headers: {
