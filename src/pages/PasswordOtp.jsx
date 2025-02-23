@@ -24,7 +24,7 @@ export default function PasswordOTP() {
 
     try {
       const response = await fetch(
-        "bookbackend-production-14e6.up.railway.app/passwordOTP",
+        "https://bookbackend-production-14e6.up.railway.app/passwordOTP",
         {
           method: "POST",
           headers: {

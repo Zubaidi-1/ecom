@@ -12,7 +12,7 @@ export default function BooksByGenre() {
     const fetchBooksByGenre = async () => {
       try {
         const response = await fetch(
-          "bookbackend-production-14e6.up.railway.app/getProductsbyGenre",
+          "https://bookbackend-production-14e6.up.railway.app/getProductsbyGenre",
           {
             method: "POST",
             headers: {

@@ -69,7 +69,7 @@ export default function MyPosts() {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `bookbackend-production-14e6.up.railway.app/deleteProduct`,
+        `https://bookbackend-production-14e6.up.railway.app/deleteProduct`,
         {
           method: "POST",
           headers: {
@@ -135,7 +135,7 @@ export default function MyPosts() {
                 <p className="text-gray-300">📞 {post.phone}</p>
                 {post.images && (
                   <motion.img
-                    src={`bookbackend-production-14e6.up.railway.app/${post.images[0]?.path.replace(
+                    src={`https://bookbackend-production-14e6.up.railway.app/${post.images[0]?.path.replace(
                       /\\\\/g,
                       "/"
                     )}`} // Normalize slashes

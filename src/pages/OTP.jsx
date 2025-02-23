@@ -24,7 +24,7 @@ export default function OTP() {
 
     try {
       const response = await fetch(
-        "bookbackend-production-14e6.up.railway.app/verifyOtp",
+        "https://bookbackend-production-14e6.up.railway.app/verifyOtp",
         {
           method: "POST",
           headers: {

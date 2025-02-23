@@ -20,7 +20,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "bookbackend-production-14e6.up.railway.app/login",
+        "https://bookbackend-production-14e6.up.railway.app/login",
         {
           method: "POST",
           headers: {
