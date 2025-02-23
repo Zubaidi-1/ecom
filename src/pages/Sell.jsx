@@ -71,7 +71,7 @@ export default function Sell() {
       }
 
       const response = await fetch(
-        "bookbackend-production-14e6.up.railway.app/sell",
+        "https://bookbackend-production-14e6.up.railway.app/sell",
         {
           method: "POST",
           body: formDataToSend,
