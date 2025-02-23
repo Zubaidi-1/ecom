@@ -20,7 +20,7 @@ function App() {
     <>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/" element={<Categories />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/OTP" element={<OTP />} />
