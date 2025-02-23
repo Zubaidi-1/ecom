@@ -96,7 +96,7 @@ export default function Login() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => (window.location.href = "/#signup")}
+              onClick={() => (window.location.href = "/ecom/#signup")}
               className="w-full px-4 py-2 md:py-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 shadow-md"
             >
               انشاء حساب
