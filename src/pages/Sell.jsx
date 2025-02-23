@@ -70,10 +70,13 @@ export default function Sell() {
         });
       }
 
-      const response = await fetch("bookbackend.railway.internal/sell", {
-        method: "POST",
-        body: formDataToSend,
-      });
+      const response = await fetch(
+        "bookbackend-production-14e6.up.railway.app/sell",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -82,7 +85,7 @@ export default function Sell() {
 
       const data = await response.json();
       console.log(data, "Data submitted successfully");
-      window.location.href = "/books/#/myPosts";
+      window.location.href = "/ecom/#/myPosts";
     } catch (error) {
       console.error("Error during submission:", error.message);
     }

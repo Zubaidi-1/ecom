@@ -43,7 +43,7 @@ export default function ChangePassword() {
 
     try {
       const response = await fetch(
-        "bookbackend.railway.internal/confirmPassword",
+        "bookbackend-production-14e6.up.railway.app/confirmPassword",
         {
           method: "POST",
           headers: {

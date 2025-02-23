@@ -16,7 +16,7 @@ export default function AllProducts() {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "bookbackend.railway.internal/getProducts",
+          "bookbackend-production-14e6.up.railway.app/getProducts",
           {
             method: "GET",
             headers: {
@@ -88,7 +88,7 @@ export default function AllProducts() {
                   </p>
                 </div>
                 <img
-                  src={`bookbackend.railway.internal/${product.images[0]?.path.replace(
+                  src={`bookbackend-production-14e6.up.railway.app/${product.images[0]?.path.replace(
                     /\\/g,
                     "/"
                   )}`}

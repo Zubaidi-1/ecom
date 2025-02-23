@@ -10,15 +10,18 @@ export default function Search() {
     if (data.trim()) {
       setLoading(true); // Set loading state to true while fetching
       try {
-        const response = await fetch("bookbackend.railway.internal/search", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", // Correct content type
-          },
-          body: JSON.stringify({
-            userInput: `%${data}%`, // Using the data in the search query
-          }),
-        });
+        const response = await fetch(
+          "bookbackend-production-14e6.up.railway.app/search",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json", // Correct content type
+            },
+            body: JSON.stringify({
+              userInput: `%${data}%`, // Using the data in the search query
+            }),
+          }
+        );
 
         const jsonResponse = await response.json();
         console.log(jsonResponse);

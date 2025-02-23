@@ -23,7 +23,7 @@ export default function ForgotPass() {
     localStorage.setItem("email", email);
     try {
       const response = await fetch(
-        "bookbackend.railway.internal/forgotPassword",
+        "bookbackend-production-14e6.up.railway.app/forgotPassword",
         {
           method: "POST",
           headers: {

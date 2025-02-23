@@ -44,19 +44,22 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("bookbackend.railway.internal/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-          firstName: firstName,
-          lastName: lastName,
-        }),
-      });
+      const response = await fetch(
+        "bookbackend-production-14e6.up.railway.app/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword,
+            firstName: firstName,
+            lastName: lastName,
+          }),
+        }
+      );
       localStorage.setItem("email", email);
       if (!response.ok) {
         throw new Error("Error signing up");

@@ -39,7 +39,7 @@ export default function MyPosts() {
     const getPosts = async () => {
       try {
         const response = await fetch(
-          "bookbackend.railway.internal/getProducts",
+          "bookbackend-production-14e6.up.railway.app/getProducts",
           {
             method: "POST",
             headers: {
@@ -69,7 +69,7 @@ export default function MyPosts() {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `bookbackend.railway.internal/deleteProduct`,
+        `bookbackend-production-14e6.up.railway.app/deleteProduct`,
         {
           method: "POST",
           headers: {
@@ -135,7 +135,7 @@ export default function MyPosts() {
                 <p className="text-gray-300">📞 {post.phone}</p>
                 {post.images && (
                   <motion.img
-                    src={`bookbackend.railway.internal/${post.images[0]?.path.replace(
+                    src={`bookbackend-production-14e6.up.railway.app/${post.images[0]?.path.replace(
                       /\\\\/g,
                       "/"
                     )}`} // Normalize slashes

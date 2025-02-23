@@ -23,16 +23,19 @@ export default function OTP() {
     const { otp } = formData;
 
     try {
-      const response = await fetch("bookbackend.railway.internal/verifyOtp", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          otp: otp,
-        }),
-      });
+      const response = await fetch(
+        "bookbackend-production-14e6.up.railway.app/verifyOtp",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            otp: otp,
+          }),
+        }
+      );
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.message || "Error verifying OTP");

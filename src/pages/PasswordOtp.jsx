@@ -23,16 +23,19 @@ export default function PasswordOTP() {
     const { otp } = formData;
 
     try {
-      const response = await fetch("bookbackend.railway.internal/passwordOTP", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          otp: otp,
-        }),
-      });
+      const response = await fetch(
+        "bookbackend-production-14e6.up.railway.app/passwordOTP",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            otp: otp,
+          }),
+        }
+      );
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.error || "Error verifying OTP");
