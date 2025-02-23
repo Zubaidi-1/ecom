@@ -22,15 +22,18 @@ export default function ForgotPass() {
     const { email } = formData;
     localStorage.setItem("email", email);
     try {
-      const response = await fetch("http://localhost:3001/forgotPassword", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-        }),
-      });
+      const response = await fetch(
+        "bookbackend.railway.internal/forgotPassword",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+          }),
+        }
+      );
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.message || "Error sending OTP");

@@ -15,12 +15,15 @@ export default function AllProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3001/getProducts", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "bookbackend.railway.internal/getProducts",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         const data = await response.json();
         data.data ? setProducts(data.data) : null;
       } catch (e) {
@@ -85,7 +88,7 @@ export default function AllProducts() {
                   </p>
                 </div>
                 <img
-                  src={`http://localhost:3001/${product.images[0]?.path.replace(
+                  src={`bookbackend.railway.internal/${product.images[0]?.path.replace(
                     /\\/g,
                     "/"
                   )}`}

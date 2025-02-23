@@ -23,7 +23,7 @@ export default function OTP() {
     const { otp } = formData;
 
     try {
-      const response = await fetch("http://localhost:3001/verifyOtp", {
+      const response = await fetch("bookbackend.railway.internal/verifyOtp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

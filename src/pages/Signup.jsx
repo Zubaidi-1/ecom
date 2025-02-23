@@ -44,7 +44,7 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/signup", {
+      const response = await fetch("bookbackend.railway.internal/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -10,7 +10,7 @@ export default function Search() {
     if (data.trim()) {
       setLoading(true); // Set loading state to true while fetching
       try {
-        const response = await fetch("http://localhost:3001/search", {
+        const response = await fetch("bookbackend.railway.internal/search", {
           method: "POST",
           headers: {
             "Content-Type": "application/json", // Correct content type

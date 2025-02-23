@@ -38,14 +38,17 @@ export default function MyPosts() {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await fetch("http://localhost:3001/getProducts", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ email }),
-        });
+        const response = await fetch(
+          "bookbackend.railway.internal/getProducts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ email }),
+          }
+        );
         const data = await response.json();
         setError(null);
         setPosts(data.data);
@@ -65,14 +68,17 @@ export default function MyPosts() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3001/deleteProduct`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ id }),
-      });
+      const response = await fetch(
+        `bookbackend.railway.internal/deleteProduct`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ id }),
+        }
+      );
 
       if (response.ok) {
         setPosts(posts.filter((post) => post.idproducts !== id));
@@ -129,7 +135,7 @@ export default function MyPosts() {
                 <p className="text-gray-300">📞 {post.phone}</p>
                 {post.images && (
                   <motion.img
-                    src={`http://localhost:3001/${post.images[0]?.path.replace(
+                    src={`bookbackend.railway.internal/${post.images[0]?.path.replace(
                       /\\\\/g,
                       "/"
                     )}`} // Normalize slashes

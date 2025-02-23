@@ -73,7 +73,7 @@ export default function EditModal({ post, isOpen, close }) {
         console.log(pair[0] + ": ", pair[1]);
       }
 
-      const response = await fetch("http://localhost:3001/editProduct", {
+      const response = await fetch("bookbackend.railway.internal/editProduct", {
         method: "POST",
         body: formDataToSend,
       });

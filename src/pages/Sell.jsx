@@ -70,7 +70,7 @@ export default function Sell() {
         });
       }
 
-      const response = await fetch("http://localhost:3001/sell", {
+      const response = await fetch("bookbackend.railway.internal/sell", {
         method: "POST",
         body: formDataToSend,
       });

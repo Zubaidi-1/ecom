@@ -23,7 +23,7 @@ export default function PasswordOTP() {
     const { otp } = formData;
 
     try {
-      const response = await fetch("http://localhost:3001/passwordOTP", {
+      const response = await fetch("bookbackend.railway.internal/passwordOTP", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

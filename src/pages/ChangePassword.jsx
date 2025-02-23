@@ -42,16 +42,19 @@ export default function ChangePassword() {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/confirmPassword", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        "bookbackend.railway.internal/confirmPassword",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        }
+      );
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.message || "Error changing password");
