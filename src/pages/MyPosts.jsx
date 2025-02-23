@@ -39,7 +39,7 @@ export default function MyPosts() {
     const getPosts = async () => {
       try {
         const response = await fetch(
-          "bookbackend-production-14e6.up.railway.app/getProducts",
+          "https://bookbackend-production-14e6.up.railway.app/getProducts",
           {
             method: "POST",
             headers: {
